@@ -40,14 +40,14 @@ module.exports = [
 		items: [
 			{
 				text: '数据结构',
-				items: [ { text: '基本数据结构', link: '/data-structure/basic/' } ]
+				items: [ { text: '基本数据结构', link: '/data-structure/基本数据结构/' } ]
 			},
 			{
 				text: '算法',
 				items: [
 					{ text: '排序', link: '/algorithm/' },
 					{ text: '搜索', link: '/algorithm/' },
-					{ text: '等等', link: '/algorithm/' }
+					{ text: '动态规划', link: '/algorithm/dynamic-programming/' }
 				]
 			}
 		]

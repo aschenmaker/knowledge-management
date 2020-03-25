@@ -1,5 +1,5 @@
 module.exports = {
-	base: '/knowledge-management/',
+	base: '',
 	title: '🎆秋的知识管理站',
 	description: 'Qiu knowledge management',
 	themeConfig: {
