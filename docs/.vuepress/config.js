@@ -18,7 +18,5 @@ module.exports = {
 		editLinks: true,
 		editLinkText: '在 GitHub 上编辑此页 ！'
 	},
-	plugins: {
-		'vuepress-plugin-auto-sidebar': {}
-	}
+	plugins: [ [ 'vuepress-plugin-auto-sidebar', {} ] ]
 };
