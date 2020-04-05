@@ -2,11 +2,11 @@ module.exports = [
 	{
 		text: '前端',
 		items: [
-			{ text: 'Javascript', link: '/fontend/javascript/' },
-			{ text: 'React', link: '/fontend/react/' },
-			{ text: 'Vue', link: '/fontend/vue/' },
-			{ text: '微信小程序', link: '/fontend/wechat-miniprogram/' },
-			{ text: 'ES6', link: '/fontend/es6/' }
+			{ text: 'Javascript', link: '/frontend/javascript/0-start' },
+			{ text: 'React', link: '/frontend/react/0-start' },
+			{ text: 'Vue', link: '/frontend/vue/0-start' },
+			{ text: '微信小程序', link: '/frontend/wechat-miniprogram/0-start' },
+			{ text: 'ES6', link: '/frontend/es6/0-start' }
 		]
 	},
 	{
@@ -14,11 +14,11 @@ module.exports = [
 		items: [
 			{
 				text: 'Electron',
-				items: [ { text: 'Electron Start', link: '/newtry/electron/' } ]
+				items: [ { text: 'Electron Start', link: '/newtry/electron/0-start' } ]
 			},
 			{
 				text: 'Flutter',
-				items: [ { text: 'Flutter Start', link: '/newtry/flutter/' } ]
+				items: [ { text: 'Flutter Start', link: '/newtry/flutter/0-start' } ]
 			}
 		]
 	},
@@ -27,11 +27,11 @@ module.exports = [
 		items: [
 			{
 				text: 'Rust 入门',
-				items: [ { text: 'Rust Start', link: '/rust/' } ]
+				items: [ { text: 'Rust Start', link: '/rust/0-start' } ]
 			},
 			{
 				text: 'Rust 进阶',
-				items: [ { text: 'Rust lan', link: '/rust/' } ]
+				items: [ { text: 'Rust lan', link: '/rust/deep/0-start' } ]
 			}
 		]
 	},
@@ -40,7 +40,10 @@ module.exports = [
 		items: [
 			{
 				text: '数据结构',
-				items: [ { text: '基本数据结构', link: '/data-structure/basic/' } ]
+				items: [
+					{ text: '数据结构', link: '/data-structure/data-structure/0-start' },
+					{ text: '用Javascript实现数据结构', link: '/data-structure/js-achieve-datastructure/0-start' }
+				]
 			},
 			{
 				text: '算法',
