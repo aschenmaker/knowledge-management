@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>归并排序 | 🎆秋的知识管理站</title>
+    <meta name="description" content="Qiu knowledge management">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.340fe3f4.css" as="style"><link rel="preload" href="/assets/js/app.0a03f5bd.js" as="script"><link rel="preload" href="/assets/js/2.29be6a25.js" as="script"><link rel="preload" href="/assets/js/16.7a984392.js" as="script"><link rel="prefetch" href="/assets/js/10.5752c074.js"><link rel="prefetch" href="/assets/js/11.b3bf9f8f.js"><link rel="prefetch" href="/assets/js/12.87cb717f.js"><link rel="prefetch" href="/assets/js/13.721f8150.js"><link rel="prefetch" href="/assets/js/14.09528162.js"><link rel="prefetch" href="/assets/js/15.10ea9de0.js"><link rel="prefetch" href="/assets/js/17.1538b9e9.js"><link rel="prefetch" href="/assets/js/18.70872cf1.js"><link rel="prefetch" href="/assets/js/19.cf31ac04.js"><link rel="prefetch" href="/assets/js/20.6d646009.js"><link rel="prefetch" href="/assets/js/21.35e4be3c.js"><link rel="prefetch" href="/assets/js/22.f0f5c813.js"><link rel="prefetch" href="/assets/js/23.18244f37.js"><link rel="prefetch" href="/assets/js/24.dfc64ad7.js"><link rel="prefetch" href="/assets/js/25.4266d917.js"><link rel="prefetch" href="/assets/js/26.d883a48e.js"><link rel="prefetch" href="/assets/js/27.01f9e617.js"><link rel="prefetch" href="/assets/js/28.3169c55f.js"><link rel="prefetch" href="/assets/js/29.fafa9c0e.js"><link rel="prefetch" href="/assets/js/3.f5152747.js"><link rel="prefetch" href="/assets/js/30.4be56a73.js"><link rel="prefetch" href="/assets/js/31.fb1b640f.js"><link rel="prefetch" href="/assets/js/32.ccfc2dcd.js"><link rel="prefetch" href="/assets/js/33.e7502a38.js"><link rel="prefetch" href="/assets/js/34.d310c52e.js"><link rel="prefetch" href="/assets/js/35.89d8e54b.js"><link rel="prefetch" href="/assets/js/36.db02374b.js"><link rel="prefetch" href="/assets/js/37.6d86c501.js"><link rel="prefetch" href="/assets/js/38.73a200da.js"><link rel="prefetch" href="/assets/js/39.eb18f8c3.js"><link rel="prefetch" href="/assets/js/4.5f60d4ea.js"><link rel="prefetch" href="/assets/js/40.b3d6734c.js"><link rel="prefetch" href="/assets/js/41.9e28abca.js"><link rel="prefetch" href="/assets/js/42.4c04f8b9.js"><link rel="prefetch" href="/assets/js/5.6c5f8081.js"><link rel="prefetch" href="/assets/js/6.ef6eb291.js"><link rel="prefetch" href="/assets/js/7.ccdd990a.js"><link rel="prefetch" href="/assets/js/8.8ccc640c.js"><link rel="prefetch" href="/assets/js/9.0ea157bb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.340fe3f4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">🎆秋的知识管理站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/javascript/0-start.html" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/0-start.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/0-start.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/wechat-miniprogram/0-start.html" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/0-start.html" class="nav-link">
+  ES6
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="新的尝试" class="dropdown-title"><span class="title">新的尝试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Electron
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/electron/0-start.html" class="nav-link">
+  Electron Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Flutter
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/flutter/0-start.html" class="nav-link">
+  Flutter Start
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Rust" class="dropdown-title"><span class="title">Rust</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Rust 入门
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/0-start.html" class="nav-link">
+  Rust Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Rust 进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/deep/0-start.html" class="nav-link">
+  Rust lan
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          数据结构
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/data-structure/data-structure/0-start.html" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-subitem"><a href="/data-structure/js-achieve-datastructure/0-start.html" class="nav-link">
+  用Javascript实现数据结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/0-start.html" class="nav-link">
+  递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/sort/0-start.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/search/" class="nav-link">
+  搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dynamic-programming/" class="nav-link">
+  动态规划
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人主页" class="dropdown-title"><span class="title">个人主页</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/aschenmaker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.lyneee.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/linkoc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/aschenmaker/knowledge-management" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/javascript/0-start.html" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/0-start.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/0-start.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/wechat-miniprogram/0-start.html" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/0-start.html" class="nav-link">
+  ES6
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="新的尝试" class="dropdown-title"><span class="title">新的尝试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Electron
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/electron/0-start.html" class="nav-link">
+  Electron Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Flutter
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/flutter/0-start.html" class="nav-link">
+  Flutter Start
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Rust" class="dropdown-title"><span class="title">Rust</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Rust 入门
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/0-start.html" class="nav-link">
+  Rust Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Rust 进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/deep/0-start.html" class="nav-link">
+  Rust lan
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          数据结构
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/data-structure/data-structure/0-start.html" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-subitem"><a href="/data-structure/js-achieve-datastructure/0-start.html" class="nav-link">
+  用Javascript实现数据结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/0-start.html" class="nav-link">
+  递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/sort/0-start.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/search/" class="nav-link">
+  搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dynamic-programming/" class="nav-link">
+  动态规划
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人主页" class="dropdown-title"><span class="title">个人主页</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/aschenmaker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.lyneee.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/linkoc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/aschenmaker/knowledge-management" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>sort</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/sort/0-start.html" class="sidebar-link">排序</a></li><li><a href="/algorithm/sort/1-bubble-sort.html" class="sidebar-link">冒泡排序</a></li><li><a href="/algorithm/sort/2-insert-sort.html" class="sidebar-link">插入排序</a></li><li><a href="/algorithm/sort/3-selection-sort.html" class="sidebar-link">选择排序</a></li><li><a href="/algorithm/sort/4-shell-sort.html" class="sidebar-link">希尔排序</a></li><li><a href="/algorithm/sort/5-merge-sort.html" class="active sidebar-link">归并排序</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/sort/5-merge-sort.html#归并排序（merge-sort）" class="sidebar-link">归并排序（Merge Sort）</a></li><li class="sidebar-sub-header"><a href="/algorithm/sort/5-merge-sort.html#关于归并排序" class="sidebar-link">关于归并排序</a></li></ul></li><li><a href="/algorithm/sort/6-quick-sort.html" class="sidebar-link">快速排序</a></li><li><a href="/algorithm/sort/7-bucket-sort.html" class="sidebar-link">桶排序</a></li><li><a href="/algorithm/sort/8-count-sort.html" class="sidebar-link">计数排序</a></li><li><a href="/algorithm/sort/9-0-radix-sort.html" class="sidebar-link">基数排序</a></li><li><a href="/algorithm/sort/9-1-sort.html" class="sidebar-link">优化排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>归并排序和快速排序都用到了分治思想，非常巧妙</p> <h2 id="归并排序（merge-sort）"><a href="#归并排序（merge-sort）" class="header-anchor">#</a> 归并排序（Merge Sort）</h2> <p>归并排序的核心思想：如果要排序一个数组，我们先把数组从中间分成前后两部分，然后对前后两部分分别排序，再将排好序的两部分合并在一起，这样整个数组就都有序了。</p> <p><img src="https://lyneee-blog-1251928147.cos.ap-chengdu.myqcloud.com/blog/20200416169R3ps7.jpg" alt="归并排序"></p> <p>归并排序使用的就是<strong>分治思想</strong>。分治，顾名思义，就是分而治之，将一个大问题分解成小的子问题来解决。小的子问题解决了，大问题也就解决了。</p> <p><img src="https://lyneee-blog-1251928147.cos.ap-chengdu.myqcloud.com/blog/2020041616849589-20171015230557043-37375010.gif" alt="归并排序gif"></p> <p>归并排序用的是分治思想，可以用递归来实现。我们现在就来看看如何用<strong>递归代码来实现归并排序</strong>。</p> <p>写出归并排序的递推公式：</p> <p><code>merge_sort(p...r) = merge(merge_sort(p...q), merge_sort(q+1...r))</code></p> <p>终止条件：</p> <p><code>p &gt;= r</code>  不用再继续分解</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">// 归并排序算法，A是数组，n表示数组大小</span>
+<span class="token function">merge_sort</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">merge_sort_c</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 递归调用函数</span>
+<span class="token function">merge_sort_c</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> p<span class="token punctuation">,</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 递归终止条件</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>p <span class="token operator">&gt;=</span> r<span class="token punctuation">)</span>  <span class="token keyword">return</span> <span class="token punctuation">;</span>
+  <span class="token comment">// 在p到r之间取q</span>
+  q <span class="token operator">=</span> <span class="token punctuation">(</span>p <span class="token operator">+</span> r<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token comment">// 分治递归</span>
+  <span class="token function">merge_sort_c</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">merge_sort_c</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> q<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// 将A[p....q] 和 A[q+1...r]合并为 A[p...r]</span>
+  <span class="token function">merge</span><span class="token punctuation">(</span>A<span class="token punctuation">[</span>p<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>r<span class="token punctuation">]</span><span class="token punctuation">,</span> A<span class="token punctuation">[</span>p<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>q<span class="token punctuation">]</span><span class="token punctuation">,</span> A<span class="token punctuation">[</span>q<span class="token operator">+</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>merge函数的作用是将两个已经有序的序列合并成一个完整的序列</p> <p>我们申请一个临时数组 tmp，大小与 A[p…r]相同。我们用两个游标 i 和 j，分别指向 A[p…q]和 A[q+1…r]的第一个元素。比较这两个元素 A[i]和 A[j]，如果 A[i]&lt;=A[j]，我们就把 A[i]放入到临时数组 tmp，并且 i 后移一位，否则将 A[j]放入到数组 tmp，j 后移一位。</p> <p><img src="https://lyneee-blog-1251928147.cos.ap-chengdu.myqcloud.com/blog/2020041616DN7RcZ.jpg" alt="合并数组"></p> <p>merge()函数如下：</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">// merge()</span>
+<span class="token function">merge</span><span class="token punctuation">(</span>A<span class="token punctuation">[</span>p<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>r<span class="token punctuation">]</span><span class="token punctuation">,</span> A<span class="token punctuation">[</span>p<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>q<span class="token punctuation">]</span><span class="token punctuation">,</span> A<span class="token punctuation">[</span>q<span class="token operator">+</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  var i <span class="token operator">:</span><span class="token operator">=</span> p，j <span class="token operator">:</span><span class="token operator">=</span> q<span class="token operator">+</span><span class="token number">1</span>，k <span class="token operator">:</span><span class="token operator">=</span> <span class="token number">0</span> <span class="token comment">// 初始化变量i, j, k</span>
+  var tmp <span class="token operator">:</span><span class="token operator">=</span> new array<span class="token punctuation">[</span><span class="token number">0.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>r<span class="token operator">-</span>p<span class="token punctuation">]</span> <span class="token comment">// 申请一个大小跟A[p...r]一样的临时数组</span>
+  <span class="token keyword">while</span> i<span class="token operator">&lt;=</span>q AND j<span class="token operator">&lt;=</span>r <span class="token keyword">do</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">if</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> A<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">{</span> 
+      tmp<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> A<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token comment">// i++等于i:=i+1 </span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+      tmp<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> A<span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 判断哪个子数组中有剩余的数据 </span>
+  var start <span class="token operator">:</span><span class="token operator">=</span> i，end <span class="token operator">:</span><span class="token operator">=</span> q 
+    <span class="token keyword">if</span> j<span class="token operator">&lt;=</span>r then start <span class="token operator">:</span><span class="token operator">=</span> j<span class="token punctuation">,</span> end<span class="token operator">:</span><span class="token operator">=</span>r
+  
+  <span class="token comment">// 将剩余的数据拷贝到临时数组tmp </span>
+  <span class="token keyword">while</span> start <span class="token operator">&lt;=</span> end <span class="token keyword">do</span> <span class="token punctuation">{</span> 
+    tmp<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> A<span class="token punctuation">[</span>start<span class="token operator">++</span><span class="token punctuation">]</span> 
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 将tmp中的数组拷贝回A[p...r] </span>
+  <span class="token keyword">for</span> i<span class="token operator">:</span><span class="token operator">=</span><span class="token number">0</span> to r<span class="token operator">-</span>p <span class="token keyword">do</span> <span class="token punctuation">{</span> 
+    A<span class="token punctuation">[</span>p<span class="token operator">+</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>最后用JavaScript 实现归并排序</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token function-variable function">mergeArr</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">left<span class="token punctuation">,</span> right</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword">let</span> temp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> leftIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> rightIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token comment">// 比较两个数组种元素的大小，依次插入数组。</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>left<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> leftIndex <span class="token operator">&amp;&amp;</span> right<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> rightIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>left<span class="token punctuation">[</span>leftIndex<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> right<span class="token punctuation">[</span>rightIndex<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			temp<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>left<span class="token punctuation">[</span>leftIndex<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			leftIndex<span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			temp<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>right<span class="token punctuation">[</span>rightIndex<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			rightIndex<span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 合并剩余的数组</span>
+	<span class="token keyword">return</span> temp<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>left<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>leftIndex<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>right<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>rightIndex<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">mergeSort</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 递归终止条件</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
+	<span class="token comment">// 取到数组中间值</span>
+	<span class="token keyword">const</span> middle <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> left <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> middle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> right <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>middle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// 递归 分解 合并</span>
+	<span class="token keyword">return</span> <span class="token function">mergeArr</span><span class="token punctuation">(</span><span class="token function">mergeSort</span><span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> testArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	testArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">mergeSort</span><span class="token punctuation">(</span>testArr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="关于归并排序"><a href="#关于归并排序" class="header-anchor">#</a> 关于归并排序</h2> <ol><li>归并排序是否为稳定的排序算法在于最终的merge过程。如果采取临时数组tmp来存放排序好的元素，那么归并排序是一个稳定的排序算法</li> <li>归并排序的时间复杂度都是<code>O(nlogn)</code></li> <li>归并排序不是原地排序算法，需要借助额外的存储空间。空间复杂度为O(n)</li></ol></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/aschenmaker/knowledge-management/edit/master/algorithm/sort/5-merge-sort.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页 ！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/sort/4-shell-sort.html" class="prev">
+        希尔排序
+      </a></span> <span class="next"><a href="/algorithm/sort/6-quick-sort.html">
+        快速排序
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.0a03f5bd.js" defer></script><script src="/assets/js/2.29be6a25.js" defer></script><script src="/assets/js/16.7a984392.js" defer></script>
+  </body>
+</html>

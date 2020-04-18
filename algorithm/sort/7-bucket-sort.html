@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>桶排序 | 🎆秋的知识管理站</title>
+    <meta name="description" content="Qiu knowledge management">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.340fe3f4.css" as="style"><link rel="preload" href="/assets/js/app.0a03f5bd.js" as="script"><link rel="preload" href="/assets/js/2.29be6a25.js" as="script"><link rel="preload" href="/assets/js/18.70872cf1.js" as="script"><link rel="prefetch" href="/assets/js/10.5752c074.js"><link rel="prefetch" href="/assets/js/11.b3bf9f8f.js"><link rel="prefetch" href="/assets/js/12.87cb717f.js"><link rel="prefetch" href="/assets/js/13.721f8150.js"><link rel="prefetch" href="/assets/js/14.09528162.js"><link rel="prefetch" href="/assets/js/15.10ea9de0.js"><link rel="prefetch" href="/assets/js/16.7a984392.js"><link rel="prefetch" href="/assets/js/17.1538b9e9.js"><link rel="prefetch" href="/assets/js/19.cf31ac04.js"><link rel="prefetch" href="/assets/js/20.6d646009.js"><link rel="prefetch" href="/assets/js/21.35e4be3c.js"><link rel="prefetch" href="/assets/js/22.f0f5c813.js"><link rel="prefetch" href="/assets/js/23.18244f37.js"><link rel="prefetch" href="/assets/js/24.dfc64ad7.js"><link rel="prefetch" href="/assets/js/25.4266d917.js"><link rel="prefetch" href="/assets/js/26.d883a48e.js"><link rel="prefetch" href="/assets/js/27.01f9e617.js"><link rel="prefetch" href="/assets/js/28.3169c55f.js"><link rel="prefetch" href="/assets/js/29.fafa9c0e.js"><link rel="prefetch" href="/assets/js/3.f5152747.js"><link rel="prefetch" href="/assets/js/30.4be56a73.js"><link rel="prefetch" href="/assets/js/31.fb1b640f.js"><link rel="prefetch" href="/assets/js/32.ccfc2dcd.js"><link rel="prefetch" href="/assets/js/33.e7502a38.js"><link rel="prefetch" href="/assets/js/34.d310c52e.js"><link rel="prefetch" href="/assets/js/35.89d8e54b.js"><link rel="prefetch" href="/assets/js/36.db02374b.js"><link rel="prefetch" href="/assets/js/37.6d86c501.js"><link rel="prefetch" href="/assets/js/38.73a200da.js"><link rel="prefetch" href="/assets/js/39.eb18f8c3.js"><link rel="prefetch" href="/assets/js/4.5f60d4ea.js"><link rel="prefetch" href="/assets/js/40.b3d6734c.js"><link rel="prefetch" href="/assets/js/41.9e28abca.js"><link rel="prefetch" href="/assets/js/42.4c04f8b9.js"><link rel="prefetch" href="/assets/js/5.6c5f8081.js"><link rel="prefetch" href="/assets/js/6.ef6eb291.js"><link rel="prefetch" href="/assets/js/7.ccdd990a.js"><link rel="prefetch" href="/assets/js/8.8ccc640c.js"><link rel="prefetch" href="/assets/js/9.0ea157bb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.340fe3f4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">🎆秋的知识管理站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/javascript/0-start.html" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/0-start.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/0-start.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/wechat-miniprogram/0-start.html" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/0-start.html" class="nav-link">
+  ES6
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="新的尝试" class="dropdown-title"><span class="title">新的尝试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Electron
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/electron/0-start.html" class="nav-link">
+  Electron Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Flutter
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/flutter/0-start.html" class="nav-link">
+  Flutter Start
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Rust" class="dropdown-title"><span class="title">Rust</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Rust 入门
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/0-start.html" class="nav-link">
+  Rust Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Rust 进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/deep/0-start.html" class="nav-link">
+  Rust lan
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          数据结构
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/data-structure/data-structure/0-start.html" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-subitem"><a href="/data-structure/js-achieve-datastructure/0-start.html" class="nav-link">
+  用Javascript实现数据结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/0-start.html" class="nav-link">
+  递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/sort/0-start.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/search/" class="nav-link">
+  搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dynamic-programming/" class="nav-link">
+  动态规划
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人主页" class="dropdown-title"><span class="title">个人主页</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/aschenmaker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.lyneee.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/linkoc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/aschenmaker/knowledge-management" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/javascript/0-start.html" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/0-start.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/0-start.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/wechat-miniprogram/0-start.html" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/0-start.html" class="nav-link">
+  ES6
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="新的尝试" class="dropdown-title"><span class="title">新的尝试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Electron
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/electron/0-start.html" class="nav-link">
+  Electron Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Flutter
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/flutter/0-start.html" class="nav-link">
+  Flutter Start
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Rust" class="dropdown-title"><span class="title">Rust</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Rust 入门
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/0-start.html" class="nav-link">
+  Rust Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Rust 进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/deep/0-start.html" class="nav-link">
+  Rust lan
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          数据结构
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/data-structure/data-structure/0-start.html" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-subitem"><a href="/data-structure/js-achieve-datastructure/0-start.html" class="nav-link">
+  用Javascript实现数据结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/0-start.html" class="nav-link">
+  递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/sort/0-start.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/search/" class="nav-link">
+  搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dynamic-programming/" class="nav-link">
+  动态规划
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人主页" class="dropdown-title"><span class="title">个人主页</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/aschenmaker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.lyneee.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/linkoc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/aschenmaker/knowledge-management" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>sort</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/sort/0-start.html" class="sidebar-link">排序</a></li><li><a href="/algorithm/sort/1-bubble-sort.html" class="sidebar-link">冒泡排序</a></li><li><a href="/algorithm/sort/2-insert-sort.html" class="sidebar-link">插入排序</a></li><li><a href="/algorithm/sort/3-selection-sort.html" class="sidebar-link">选择排序</a></li><li><a href="/algorithm/sort/4-shell-sort.html" class="sidebar-link">希尔排序</a></li><li><a href="/algorithm/sort/5-merge-sort.html" class="sidebar-link">归并排序</a></li><li><a href="/algorithm/sort/6-quick-sort.html" class="sidebar-link">快速排序</a></li><li><a href="/algorithm/sort/7-bucket-sort.html" class="active sidebar-link">桶排序</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/sort/7-bucket-sort.html#桶排序" class="sidebar-link">桶排序</a></li></ul></li><li><a href="/algorithm/sort/8-count-sort.html" class="sidebar-link">计数排序</a></li><li><a href="/algorithm/sort/9-0-radix-sort.html" class="sidebar-link">基数排序</a></li><li><a href="/algorithm/sort/9-1-sort.html" class="sidebar-link">优化排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="桶排序"><a href="#桶排序" class="header-anchor">#</a> 桶排序</h2> <p>桶排序（Bucket sort）是非基于比较的排序算法。</p> <p>核心思想是将要排序的数据分到几个有序的桶里，每个桶里的数据再单独进行排序。桶内排完序之后，再把每个桶里的数据按照顺序依次取出，组成的序列就是有序的了。</p> <p><img src="https://lyneee-blog-1251928147.cos.ap-chengdu.myqcloud.com/blog/2020041720PZIXn5.jpg" alt="桶排序"></p> <p>桶排序的时间复杂度为什么是 O(n) 呢？</p> <p>如果要排序的数据有 n 个，我们把它们均匀地划分到 m 个桶内，每个桶里就有 k=n/m 个元素。每个桶内部使用快速排序，时间复杂度为 O(k * logk)。</p> <p>m 个桶排序的时间复杂度就是 O(m * k * logk)，因为 k=n/m，所以整个桶排序的时间复杂度就是 O(n*log(n/m))。</p> <p>当桶的个数 m 接近数据个数 n 时，log(n/m) 就是一个非常小的常量，这个时候桶排序的时间复杂度接近 O(n)。</p> <p><strong>实际上，桶排序对要排序数据的要求是非常苛刻的。</strong></p> <p>首先，要排序的数据需要很容易就能划分成 m 个桶，并且，桶与桶之间有着天然的大小顺序。这样每个桶内的数据都排序完之后，桶与桶之间的数据不需要再进行排序。</p> <p>其次，数据在各个桶之间的分布是比较均匀的。如果数据经过桶的划分之后，有些桶里的数据非常多，有些非常少，很不平均，那桶内数据排序的时间复杂度就不是常量级了。</p> <p>在极端情况下，如果数据都被划分到一个桶里，那就退化为 O(nlogn) 的排序算法了。</p> <p><strong>桶排序比较适合用在外部排序中</strong>。所谓的外部排序就是数据存储在外部磁盘中，数据量比较大，内存有限，无法将数据全部加载到内存中。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">function</span> <span class="token function">bucketSort</span><span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> bucketSizeDefault <span class="token operator">=</span> <span class="token number">5</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>lenth <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> arr<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">let</span> minValue <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> maxValue <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token comment">// 输入数据最大最小值</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">const</span> e <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token operator">&lt;</span> minValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			minValue <span class="token operator">=</span> e<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token operator">&gt;</span> maxValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			maxValue <span class="token operator">=</span> e<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// 初始化桶</span>
+	<span class="token keyword">let</span> bucketSize <span class="token operator">=</span> bucketSizeDefault<span class="token punctuation">;</span>
+	<span class="token comment">// 桶值大小的区间</span>
+	<span class="token keyword">let</span> bucketCount <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>maxValue <span class="token operator">-</span> minValue<span class="token punctuation">)</span> <span class="token operator">/</span> bucketSize<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> buckets <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>bucketCount<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> buckets<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		buckets<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 将数据分配到各个桶之中去</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		buckets<span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> minValue<span class="token punctuation">)</span> <span class="token operator">/</span> bucketSize<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> buckets<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">const</span> element <span class="token operator">=</span> buckets<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token comment">// 使用快速排序对桶内的元素进行排序</span>
+
+		<span class="token function">quickSort</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> element<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> buckets<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>buckets<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> arr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/aschenmaker/knowledge-management/edit/master/algorithm/sort/7-bucket-sort.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页 ！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/sort/6-quick-sort.html" class="prev">
+        快速排序
+      </a></span> <span class="next"><a href="/algorithm/sort/8-count-sort.html">
+        计数排序
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.0a03f5bd.js" defer></script><script src="/assets/js/2.29be6a25.js" defer></script><script src="/assets/js/18.70872cf1.js" defer></script>
+  </body>
+</html>

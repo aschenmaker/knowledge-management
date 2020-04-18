@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Javascript 实现常用的数据结构 | 🎆秋的知识管理站</title>
+    <meta name="description" content="Qiu knowledge management">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.340fe3f4.css" as="style"><link rel="preload" href="/assets/js/app.0a03f5bd.js" as="script"><link rel="preload" href="/assets/js/2.29be6a25.js" as="script"><link rel="preload" href="/assets/js/26.d883a48e.js" as="script"><link rel="prefetch" href="/assets/js/10.5752c074.js"><link rel="prefetch" href="/assets/js/11.b3bf9f8f.js"><link rel="prefetch" href="/assets/js/12.87cb717f.js"><link rel="prefetch" href="/assets/js/13.721f8150.js"><link rel="prefetch" href="/assets/js/14.09528162.js"><link rel="prefetch" href="/assets/js/15.10ea9de0.js"><link rel="prefetch" href="/assets/js/16.7a984392.js"><link rel="prefetch" href="/assets/js/17.1538b9e9.js"><link rel="prefetch" href="/assets/js/18.70872cf1.js"><link rel="prefetch" href="/assets/js/19.cf31ac04.js"><link rel="prefetch" href="/assets/js/20.6d646009.js"><link rel="prefetch" href="/assets/js/21.35e4be3c.js"><link rel="prefetch" href="/assets/js/22.f0f5c813.js"><link rel="prefetch" href="/assets/js/23.18244f37.js"><link rel="prefetch" href="/assets/js/24.dfc64ad7.js"><link rel="prefetch" href="/assets/js/25.4266d917.js"><link rel="prefetch" href="/assets/js/27.01f9e617.js"><link rel="prefetch" href="/assets/js/28.3169c55f.js"><link rel="prefetch" href="/assets/js/29.fafa9c0e.js"><link rel="prefetch" href="/assets/js/3.f5152747.js"><link rel="prefetch" href="/assets/js/30.4be56a73.js"><link rel="prefetch" href="/assets/js/31.fb1b640f.js"><link rel="prefetch" href="/assets/js/32.ccfc2dcd.js"><link rel="prefetch" href="/assets/js/33.e7502a38.js"><link rel="prefetch" href="/assets/js/34.d310c52e.js"><link rel="prefetch" href="/assets/js/35.89d8e54b.js"><link rel="prefetch" href="/assets/js/36.db02374b.js"><link rel="prefetch" href="/assets/js/37.6d86c501.js"><link rel="prefetch" href="/assets/js/38.73a200da.js"><link rel="prefetch" href="/assets/js/39.eb18f8c3.js"><link rel="prefetch" href="/assets/js/4.5f60d4ea.js"><link rel="prefetch" href="/assets/js/40.b3d6734c.js"><link rel="prefetch" href="/assets/js/41.9e28abca.js"><link rel="prefetch" href="/assets/js/42.4c04f8b9.js"><link rel="prefetch" href="/assets/js/5.6c5f8081.js"><link rel="prefetch" href="/assets/js/6.ef6eb291.js"><link rel="prefetch" href="/assets/js/7.ccdd990a.js"><link rel="prefetch" href="/assets/js/8.8ccc640c.js"><link rel="prefetch" href="/assets/js/9.0ea157bb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.340fe3f4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">🎆秋的知识管理站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/javascript/0-start.html" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/0-start.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/0-start.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/wechat-miniprogram/0-start.html" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/0-start.html" class="nav-link">
+  ES6
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="新的尝试" class="dropdown-title"><span class="title">新的尝试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Electron
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/electron/0-start.html" class="nav-link">
+  Electron Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Flutter
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/flutter/0-start.html" class="nav-link">
+  Flutter Start
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Rust" class="dropdown-title"><span class="title">Rust</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Rust 入门
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/0-start.html" class="nav-link">
+  Rust Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Rust 进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/deep/0-start.html" class="nav-link">
+  Rust lan
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          数据结构
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/data-structure/data-structure/0-start.html" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-subitem"><a href="/data-structure/js-achieve-datastructure/0-start.html" class="nav-link router-link-exact-active router-link-active">
+  用Javascript实现数据结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/0-start.html" class="nav-link">
+  递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/sort/0-start.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/search/" class="nav-link">
+  搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dynamic-programming/" class="nav-link">
+  动态规划
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人主页" class="dropdown-title"><span class="title">个人主页</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/aschenmaker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.lyneee.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/linkoc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/aschenmaker/knowledge-management" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/javascript/0-start.html" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/react/0-start.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/vue/0-start.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/wechat-miniprogram/0-start.html" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/es6/0-start.html" class="nav-link">
+  ES6
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="新的尝试" class="dropdown-title"><span class="title">新的尝试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Electron
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/electron/0-start.html" class="nav-link">
+  Electron Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Flutter
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/newtry/flutter/0-start.html" class="nav-link">
+  Flutter Start
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Rust" class="dropdown-title"><span class="title">Rust</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Rust 入门
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/0-start.html" class="nav-link">
+  Rust Start
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Rust 进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/rust/deep/0-start.html" class="nav-link">
+  Rust lan
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          数据结构
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/data-structure/data-structure/0-start.html" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-subitem"><a href="/data-structure/js-achieve-datastructure/0-start.html" class="nav-link router-link-exact-active router-link-active">
+  用Javascript实现数据结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/0-start.html" class="nav-link">
+  递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/sort/0-start.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/search/" class="nav-link">
+  搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dynamic-programming/" class="nav-link">
+  动态规划
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人主页" class="dropdown-title"><span class="title">个人主页</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/aschenmaker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.lyneee.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/linkoc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/aschenmaker/knowledge-management" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>js-achieve-datastructure</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/data-structure/js-achieve-datastructure/0-start.html" class="active sidebar-link">Javascript 实现常用的数据结构</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/data-structure/js-achieve-datastructure/0-start.html#数据结构" class="sidebar-link">数据结构</a></li></ul></li><li><a href="/data-structure/js-achieve-datastructure/1-stack.html" class="sidebar-link">堆栈 Stack</a></li><li><a href="/data-structure/js-achieve-datastructure/2-queue.html" class="sidebar-link">队列 Queue</a></li><li><a href="/data-structure/js-achieve-datastructure/3-linked-list.html" class="sidebar-link">链表 Linked List</a></li><li><a href="/data-structure/js-achieve-datastructure/4-set.html" class="sidebar-link">集合 Set</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="数据结构"><a href="#数据结构" class="header-anchor">#</a> 数据结构</h2> <p>最近刷 Leetcode ，一直选用 JavaScript 来答题，遇到很多题都需要用到 DFS BFS 堆栈图等等数据结构中的知识。因此来做一个总结。</p> <p>在计算机科学中，数据结构（data structure）指的是存储和组织数据的方式。正确的数据结构选择可以提高算法的效率。</p> <p>常见的数据结构如下：</p> <ul><li><strong>堆栈 (stack)</strong> ：遵循先进后出的原则的有序集合。Last In First Out (LIFO)</li> <li><strong>队列 (Queue)</strong>： 遵循后进先出的原则的有序集合。Fisrt In First Out(FIFO)</li> <li><strong>链表 (Linked List)</strong>：线性表，但是不会按照线性的顺序来存储数据，每个节点里存在下一个节点的指针。 快慢指针</li> <li><strong>树 (Tree)</strong>：多层数据结构，在插入和搜索时高效</li> <li><strong>图 (Graph)</strong></li> <li><strong>堆(Heap)</strong></li> <li><strong>散列表/希表 (Hash table)</strong></li></ul> <p>引用</p> <p>https://juejin.im/post/594dfe795188250d725a220a#heading-16</p> <p>https://blog.fundebug.com/2019/08/12/8-common-data-structure-and-javascript-implementation/</p> <p><a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" target="_blank" rel="noopener noreferrer">https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/aschenmaker/knowledge-management/edit/master/data-structure/js-achieve-datastructure/0-start.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页 ！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/5/2020, 10:31:22 PM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/data-structure/js-achieve-datastructure/1-stack.html">
+        堆栈 Stack
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.0a03f5bd.js" defer></script><script src="/assets/js/2.29be6a25.js" defer></script><script src="/assets/js/26.d883a48e.js" defer></script>
+  </body>
+</html>
